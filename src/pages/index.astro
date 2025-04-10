@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Experience from '../components/Experience.astro';
+---
+
+<Layout title="Javier Campos Moñino | Desarrollador Full-Stack">
+  <Header />
+  <main class="pt-16">
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 dark:from-dark dark:to-gray-900">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">
+          Javier Campos Moñino
+        </h1>
+        <div class="h-16 md:h-20 mb-6">
+          <span id="typed-text" class="text-3xl md:text-4xl font-bold text-primary"></span>
+        </div>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          Desarrollador Full-Stack con experiencia en el desarrollo de aplicaciones web y dominio de múltiples frameworks.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#experience"
+            class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-colors"
+          >
+            Ver Experiencia
+          </a>
+          <a
+            href="/cv.pdf"
+            class="px-6 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors"
+          >
+            Descargar CV
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <Experience />
+  </main>
+
+  <footer class="bg-gray-50 dark:bg-dark py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-600 dark:text-gray-400">
+        © {new Date().getFullYear()} - Desarrollado con Astro y Tailwind CSS
+      </p>
+    </div>
+  </footer>
+</Layout>
+
+<script>
+  import Typed from 'typed.js';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    new Typed('#typed-text', {
+      strings: ['Desarrollador Full-Stack'],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 2000,
+      loop: true
+    });
+  });
+</script> 
