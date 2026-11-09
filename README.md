@@ -4,11 +4,17 @@ Este es un portfolio personal desarrollado con Astro y Tailwind CSS, que muestra
 
 ## Características
 
-- Diseño responsive
-- Modo oscuro/claro
-- Sección de experiencia laboral
-- Descarga de CV
-- Optimizado para SEO
+- Diseño responsive con menú móvil
+- Modo claro/oscuro con botón (recuerda la elección y, si no hay, sigue al sistema)
+- Experiencia, tecnologías, proyectos propios, formación y contacto
+- Descarga de CV (`public/cv.pdf`)
+- SEO: descripción, URL canónica, Open Graph y favicon
+
+Publicado en https://xavijc.github.io/JCM.dev/ (se despliega con GitHub Pages al hacer push a `master`).
+
+## Cómo actualizar el contenido
+
+Todo el contenido (experiencia, tecnologías, proyectos, formación y datos de contacto) está en `src/data/cv.ts`. Para cambiar el CV descargable, sustituye `public/cv.pdf`.
 
 ## Tecnologías Utilizadas
 

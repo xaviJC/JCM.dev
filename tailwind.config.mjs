@@ -1,14 +1,25 @@
 /** @type {import('tailwindcss').Config} */
+const v = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        primary: '#3B82F6',
-        secondary: '#1E40AF',
-        dark: '#1F2937',
+        bg: v('bg'),
+        surface: v('surface'),
+        ink: v('ink'),
+        muted: v('muted'),
+        line: v('line'),
+        brand: v('brand'),
+        tint: v('tint'),
+      },
+      fontFamily: {
+        display: ['"Bricolage Grotesque Variable"', 'system-ui', 'sans-serif'],
+        sans: ['"Instrument Sans Variable"', 'system-ui', 'sans-serif'],
       },
     },
   },
   plugins: [],
-} 
+};

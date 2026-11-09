@@ -1,0 +1,21 @@
+---
+import { education } from '../data/cv';
+---
+
+<section id="formacion" class="mx-auto max-w-5xl px-5 py-14 md:py-20">
+  <h2 class="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">Formación</h2>
+  <ul class="mt-8">
+    {
+      education.map((item) => (
+        <li class="grid gap-x-10 gap-y-2 border-t border-line py-6 md:grid-cols-[11rem_1fr]">
+          <p class="text-sm tabular-nums text-muted md:pt-1">{item.period}</p>
+          <div>
+            <h3 class="font-display text-lg font-bold text-ink">{item.title}</h3>
+            <p class="text-brand">{item.place}</p>
+            {item.detail && <p class="mt-2 max-w-2xl text-sm text-muted">{item.detail}</p>}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
