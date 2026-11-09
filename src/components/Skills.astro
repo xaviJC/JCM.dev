@@ -1,0 +1,19 @@
+---
+import { skills } from '../data/cv';
+---
+
+<section id="tecnologias" class="bg-tint">
+  <div class="mx-auto max-w-5xl px-5 py-14 md:py-20">
+    <h2 class="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">Tecnologías</h2>
+    <dl class="mt-8">
+      {
+        skills.map((group) => (
+          <div class="grid gap-x-10 gap-y-1 border-t border-ink/15 py-4 md:grid-cols-[11rem_1fr]">
+            <dt class="text-sm text-muted md:pt-0.5">{group.area}</dt>
+            <dd class="font-display text-lg font-semibold text-ink">{group.items.join(', ')}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>

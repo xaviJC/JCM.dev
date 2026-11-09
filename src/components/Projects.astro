@@ -1,0 +1,27 @@
+---
+import { projects } from '../data/cv';
+---
+
+<section id="proyectos" class="mx-auto max-w-5xl px-5 py-14 md:py-20">
+  <h2 class="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">Proyectos propios</h2>
+  <ul class="mt-8">
+    {
+      projects.map((project) => (
+        <li class="grid gap-x-10 gap-y-2 border-t border-line py-8 md:grid-cols-[11rem_1fr]">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-brand underline underline-offset-4 md:pt-1"
+          >
+            {project.urlLabel}
+          </a>
+          <div>
+            <h3 class="font-display text-xl font-bold text-ink">{project.name}</h3>
+            <p class="mt-2 max-w-2xl leading-relaxed text-ink">{project.text}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>

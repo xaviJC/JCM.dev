@@ -1,0 +1,32 @@
+---
+import { profile } from '../data/cv';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
+---
+
+<section id="contacto" class="bg-brand text-bg">
+  <div class="mx-auto max-w-5xl px-5 py-16 md:py-24">
+    <h2 class="font-display text-3xl font-bold tracking-tight md:text-4xl">Contacto</h2>
+    <p class="mt-4 max-w-xl text-lg leading-relaxed">
+      Si buscas un desarrollador senior para tu equipo o tienes un proyecto en mente, escríbeme.
+    </p>
+    <a
+      href={`mailto:${profile.email}`}
+      class="mt-8 block break-all font-display text-[clamp(1.5rem,5.5vw,3.25rem)] font-bold leading-tight underline decoration-2 underline-offset-8"
+    >
+      {profile.email}
+    </a>
+    <ul class="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-8">
+      <li>
+        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" class="font-semibold underline underline-offset-4">
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href={`${base}${profile.cvFile}`} download={profile.cvDownloadName} class="font-semibold underline underline-offset-4">
+          Descargar CV (PDF)
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

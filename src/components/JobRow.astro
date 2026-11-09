@@ -1,0 +1,34 @@
+---
+import type { Job } from '../data/cv';
+
+interface Props {
+  job: Job;
+}
+
+const { job } = Astro.props;
+---
+
+<li class="grid gap-x-10 gap-y-2 border-t border-line py-8 md:grid-cols-[11rem_1fr]">
+  <p class="text-sm tabular-nums text-muted md:pt-1">{job.period}</p>
+  <div>
+    <h3 class="font-display text-xl font-bold text-ink">
+      {job.company}
+      <span class="block text-base font-medium text-brand">{job.role}</span>
+    </h3>
+    <ul class="mt-4 max-w-2xl space-y-2 leading-relaxed text-ink">
+      {
+        job.points.map((point) => (
+          <li class="relative pl-5 before:absolute before:left-0 before:top-[0.7em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand">
+            {point.label && <strong class="font-semibold">{point.label}: </strong>}
+            {point.text}
+          </li>
+        ))
+      }
+    </ul>
+    {
+      job.stack.length > 0 && (
+        <p class="mt-4 max-w-2xl text-sm text-muted">{job.stack.join(', ')}</p>
+      )
+    }
+  </div>
+</li>
